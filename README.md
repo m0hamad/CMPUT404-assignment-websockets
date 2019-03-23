@@ -17,6 +17,13 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Sources
+=======
+
+https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onopen
+
+https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onmessage
+
 Contributors / Licensing
 ========================
 
