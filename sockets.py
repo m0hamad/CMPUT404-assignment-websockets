@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 import flask
-from flask import Flask, request
+from flask import Flask, request, redirect
 from flask_sockets import Sockets
 import gevent
 from gevent import queue
@@ -97,8 +97,6 @@ myWorld = World()
 
 def set_listener( entity, data ):
 
-    ''' do something with the update ! '''
-
     msg = json.dumps({entity: data})
 
     for client in clients:
@@ -112,7 +110,7 @@ def hello():
 
     '''Return something coherent here.. perhaps redirect to /static/index.html '''
 
-    return None
+    return redirect("/static/index.html")
 
 def read_ws(ws,client):
 
