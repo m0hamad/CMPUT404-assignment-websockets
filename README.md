@@ -24,6 +24,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onopen
 
 https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onmessage
 
+https://github.com/uofa-cmput404/cmput404-slides/blob/master/examples/WebSocketsExamples/chat.py
+
 Contributors / Licensing
 ========================
 

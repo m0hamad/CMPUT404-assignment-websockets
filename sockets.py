@@ -99,6 +99,12 @@ def set_listener( entity, data ):
 
     ''' do something with the update ! '''
 
+    msg = json.dumps({entity: data})
+
+    for client in clients:
+
+        client.put(msg)
+
 myWorld.add_set_listener( set_listener )
         
 @app.route('/')
@@ -186,14 +192,8 @@ def update(entity):
 
     entities = flask_post_json()
 
-    if request.method == "POST":
-
-        for key, value in entities.items():
-
-            myWorld.update(entity, key, value)
-    else:
-
-        myWorld.set(entity, entities)
+    for key, value in entities.items():
+        myWorld.update(entity, key, value)
         
     return json.dumps(myWorld.get(entity))
 

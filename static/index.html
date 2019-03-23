@@ -258,7 +258,7 @@ function wsSetup() {
     // https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onopen
     // readyState is changed to open.
     socket.onopen = function() {
-        console.log("WebSocket is open now.");
+        //console.log("WebSocket is open now.");
     };
     socket.onerror = function(msg) {
         debug("WebSocket Error:" + msg.data);
@@ -266,12 +266,11 @@ function wsSetup() {
     socket.onmessage = function(msg) {  
         try {
             debug("WebSocket Recv:" + msg.data);
-            // https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onmessage
             let message = JSON.parse(msg.data);
             for (let entity in message) {
                 world[entity] = message[entity]
                 drawNextFrame()
-            }  
+            }
         } catch (e) {
             alert("socket on message: " + e);
         }
